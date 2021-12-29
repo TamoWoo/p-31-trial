@@ -31,16 +31,16 @@ function setup() {
   }
 
   //create 3rd row of plinko objects
-  for (var j = 50; j <=width; j=j+50) { 
+  for (var j = 75; j <=width; j=j+50) { 
     plinkos.push(new Plinko(j,275));
   }
   
   //create 4th row of plinko objects
-  for (var j = 75 ; j <=width; j=j+50) { 
+  for (var j = 50 ; j <=width-10; j=j+50) { 
     plinkos.push(new Plinko(j,375));
   }
-    
 }
+  
  
 
 
@@ -52,11 +52,12 @@ function draw() {
   ground.display();
   
   //display the plinkos 
-
-
+    
   for (var i = 0; i < plinkos.length; i++) {
     plinkos[i].display();   
   }
+
+ 
    
   //display the divisions
   for (var k = 0; k < divisions.length; k++) {
@@ -65,11 +66,14 @@ function draw() {
 
   //create the particles using frameCount
   if(frameCount%60===0){
-    particles.push(new Particle(random(0,800),0))
+    particles.push(new Particles(random(width/2-30,width/2+30), 10,10))
+    score++
     }
 
   //display the particles 
   for(var k = 0; k < particles.lenght; k++){
     particles[k].display();
     }
+    for (var k = 0; k < divisions.length; k++) { divisions[k].display(); }
 }
+
