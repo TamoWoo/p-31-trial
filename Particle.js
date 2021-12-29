@@ -18,9 +18,9 @@ class Particles {
         push();
         translate(pos.x, pos.y);
         rotate(angle);
-        imageMode(CENTER);
+        //imageMode(CENTER);
         noStroke();
-        fill("white");
+        fill(this.color);
         ellipseMode(RADIUS);
         ellipse(0,0,this.r,this.r);
         pop();
